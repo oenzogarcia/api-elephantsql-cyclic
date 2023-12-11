@@ -23,7 +23,7 @@ app.get('/', async (req, res) => {
 app.get('/animes', async (req, res) => {
     try {
         const animes = await knex('animes').select('*');
-        return res.json(animes);
+        return res.json({ categorias: animes });
     } catch (error) {
         console.log(error.message);
     }
